@@ -27,22 +27,27 @@ class AppRoutes {
         route: '/listview1',
         name: 'Listview type 1',
         screen: const Listview1Screen(),
-        icon: Icons.view_list),
+        icon: Icons.format_list_bulleted_outlined),
     MenuOption(
         route: '/listview2',
         name: 'Listview type 2',
         screen: const Listview2Screen(),
-        icon: Icons.format_list_bulleted_outlined),
+        icon: Icons.view_list),
     MenuOption(
         route: '/alert',
         name: 'Alert',
         screen: const AlertScreen(),
-        icon: Icons.railway_alert),
+        icon: Icons.add_alert_sharp),
     MenuOption(
         route: '/card',
         name: 'Card',
         screen: const CardScreen(),
-        icon: Icons.camera_front_rounded)
+        icon: Icons.view_compact_rounded),
+    MenuOption(
+        route: '/avatar',
+        name: 'Circle Avatar',
+        screen: const AvatarScreen(),
+        icon: Icons.supervised_user_circle_outlined),
   ];
 
   // static Map<String, Widget Function(BuildContext)> routes = {

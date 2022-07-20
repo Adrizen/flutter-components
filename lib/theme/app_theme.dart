@@ -13,7 +13,17 @@ class AppTheme {
 
       // Text button theme.
       textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(primary: primaryColor)));
+          style: TextButton.styleFrom(primary: primaryColor)),
+
+      // FloatingActionButtons.
+      floatingActionButtonTheme:
+          const FloatingActionButtonThemeData(backgroundColor: primaryColor),
+      // ElevatedButtonTheme.
+      elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+              primary: primaryColor,
+              shape: const StadiumBorder(),
+              elevation: 0)));
 
   static const Color secondaryColor = Colors.deepOrangeAccent;
 
