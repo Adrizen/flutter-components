@@ -28,6 +28,6 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
             separatorBuilder: (_, __) => const Divider(),
-            itemCount: AppRoutes.getAppRoutes().length));
+            itemCount: AppRoutes.menuOptions.length));
   }
 }
