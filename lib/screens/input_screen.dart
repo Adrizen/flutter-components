@@ -90,7 +90,7 @@ class InputScreen extends StatelessWidget {
                         ),
                       ],
                       onChanged: (value) {
-                        print(value);
+                        //print(value);
                         formValues['role'] = value ?? 'Admin';
                       }),
 
@@ -108,7 +108,7 @@ class InputScreen extends StatelessWidget {
                       if (!myFormKey.currentState!.validate()) {
                         return;
                       }
-                      print(formValues);
+                      //print(formValues);
                     },
                   )
                 ],

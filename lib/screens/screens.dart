@@ -1,4 +1,6 @@
 // This is a barrel.
+export 'package:fl_components/screens/listview_builder_screen.dart';
+export 'package:fl_components/screens/slider_screen.dart';
 export 'package:fl_components/screens/input_screen.dart';
 export 'package:fl_components/screens/animated_screen.dart';
 export 'package:fl_components/screens/avatar_screen.dart';
