@@ -1,5 +1,6 @@
 import 'package:fl_components/theme/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class ListViewBuilderScreen extends StatefulWidget {
   const ListViewBuilderScreen({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
   @override
   void initState() {
     super.initState();
-
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
     scrollController.addListener(() {
       if ((scrollController.position.pixels + 500) >=
           scrollController.position.maxScrollExtent) {
@@ -65,7 +66,6 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-
     return Scaffold(
       backgroundColor: Colors.black,
       body: MediaQuery.removePadding(
@@ -74,6 +74,7 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
         removeBottom: true,
         child: Stack(
           children: [
+            MyMessage(),
             RefreshIndicator(
               color: AppTheme.primaryColor,
               backgroundColor: Colors.black,
@@ -124,5 +125,40 @@ class _LoadingIcon extends StatelessWidget {
       ),
       child: const CircularProgressIndicator(color: AppTheme.primaryColor),
     );
+  }
+}
+
+class MyMessage extends StatefulWidget {
+  const MyMessage({Key? key}) : super(key: key);
+
+  @override
+  State<MyMessage> createState() => _MyMessageState();
+}
+
+class _MyMessageState extends State<MyMessage> {
+  bool show = false;
+
+  // Wrapper Widget
+  @override
+  Widget build(BuildContext context) {
+    Future.delayed(const Duration(seconds: 1), () => showMessage(context));
+    return const Text('');
+  }
+
+  void showMessage(BuildContext context) {
+    if (!show) {
+      showDialog(
+          barrierDismissible: true,
+          context: context,
+          builder: (context) {
+            return const AlertDialog(
+              content: Text(
+                  'Swipe down from top to show bottom navigation controls again'),
+            );
+          });
+    }
+    setState(() {
+      show = true;
+    });
   }
 }
